@@ -30,6 +30,7 @@ public class RegistrarAeropuerto extends AppCompatActivity implements View.OnCli
         longitud=findViewById(R.id.txtlongitud);
         registar1=findViewById(R.id.btnregistrar1);
         registar1.setOnClickListener(this);
+        ac = new AeropuertoController(this);
     }
 
     @Override
