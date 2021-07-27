@@ -46,15 +46,12 @@ public class RegistrarAeropuerto extends AppCompatActivity implements View.OnCli
                                          ciudad.getText().toString(),direccion.getText().toString(),latitud.getText().toString(),
                                          longitud.getText().toString());
 
-                    ac.agregarAeropuerto(a);
-
-                    /*if(ac.buscarAeropuerto(aero)){
+                    if(ac.buscarAeropuerto(a)){
                         Toast.makeText(this,"Código ya existe, no se podra registar", Toast.LENGTH_LONG).show();
 
                     }else{
-                        Toast.makeText(this,"registrado", Toast.LENGTH_LONG).show();
-                        ac.agregarAeropuerto(aero);
-                    }*/
+                        ac.agregarAeropuerto(a);
+                    }
                 }
         }
     }

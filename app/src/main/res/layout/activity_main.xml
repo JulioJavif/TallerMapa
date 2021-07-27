@@ -19,24 +19,6 @@
         android:text="REGISTRAR AEROPUERTO" />
 
     <Button
-        android:id="@+id/btnconsultar"
-        android:layout_width="match_parent"
-        android:layout_height="69dp"
-        android:text="CONSULTAR" />
-
-    <Button
-        android:id="@+id/btnactualizar"
-        android:layout_width="match_parent"
-        android:layout_height="84dp"
-        android:text="ACTUALIZAR" />
-
-    <Button
-        android:id="@+id/btneliminar"
-        android:layout_width="match_parent"
-        android:layout_height="72dp"
-        android:text="ELIMINAR" />
-
-    <Button
         android:id="@+id/btnlistado"
         android:layout_width="match_parent"
         android:layout_height="80dp"
