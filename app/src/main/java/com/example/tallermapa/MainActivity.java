@@ -28,8 +28,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.btnregistrar:
-                Intent i= new Intent(this, RegistrarAeropuerto.class);
+                Intent i = new Intent(this, RegistrarAeropuerto.class);
                 startActivity(i);
+                break;
+            case R.id.btnlistado:
+                Intent i2 = new Intent(this, ListadoAereopuerto.class);
+                startActivity(i2);
                 break;
         }
 

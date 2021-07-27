@@ -6,6 +6,8 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+
 public class AeropuertoController {
     private BaseDatos bd;
     private Context c;
@@ -46,5 +48,35 @@ public class AeropuertoController {
             bd.close();
             return false;
         }
+    }
+
+    public ArrayList AllAereopuerto(){
+        ArrayList array = new ArrayList();
+
+        SQLiteDatabase sql = bd.getReadableDatabase();
+        Cursor c = sql.query(DefDB.tabla_est, new String[]{"codigo", "nombre", "pais", "ciudad"},
+                null, null, null, null, null);
+        if (c != null){
+            c.moveToFirst();
+            do {
+                array.add(c.getString(1)+" - ("+c.getString(3)+","+c.getString(2)+")");
+            }while (c.moveToNext());
+        }
+
+        return array;
+    }
+
+    public ArrayList ListaIDs(){
+        SQLiteDatabase sql = bd.getReadableDatabase();
+        Cursor c = sql.query(DefDB.tabla_est, new String[]{"codigo"},
+                null, null, null, null, null);
+        ArrayList<String> lista = new ArrayList<>();
+        if (c != null){
+            c.moveToFirst();
+            do {
+                lista.add(c.getString(0));
+            }while (c.moveToNext());
+        }
+        return lista;
     }
 }
