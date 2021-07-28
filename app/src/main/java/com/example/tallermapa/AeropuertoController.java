@@ -28,7 +28,6 @@ public class AeropuertoController {
             valores.put(DefDB.col_latitud,a.getLatitud());
             valores.put(DefDB.col_longitud,a.getLongitud());
             long id = sql.insert(DefDB.tabla_est, null, valores);
-            //sql.execSQL("insert into " + DefDB.tabla_est + " values (" + e.getCodigo() + "," + e.getNombre() + "," + e.getPrograma() +");");
             Toast.makeText(c, "Aeropuerto registrado", Toast.LENGTH_LONG).show();
         }
         catch (Exception ex){
@@ -62,7 +61,6 @@ public class AeropuertoController {
                 array.add(c.getString(1)+" - ("+c.getString(3)+","+c.getString(2)+")");
             }while (c.moveToNext());
         }
-
         return array;
     }
 
@@ -78,5 +76,18 @@ public class AeropuertoController {
             }while (c.moveToNext());
         }
         return lista;
+    }
+
+
+    public Cursor allAeropuerto(){
+        try{
+            SQLiteDatabase sql = bd.getReadableDatabase();
+            Cursor cur = sql.rawQuery("select codigo as _id , nombre, pais,ciudad, direccion, latitud, longitud from Aeropuerto order by " + DefDB.col_codigo, null);
+            return cur;
+        }
+        catch (Exception ex){
+            Toast.makeText(c, "Error consulta Restaurantes " + ex.getMessage(), Toast.LENGTH_LONG).show();
+            return null;
+        }
     }
 }
