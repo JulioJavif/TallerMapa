@@ -26,12 +26,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View v) {
+        Intent i;
         switch (v.getId()){
             case R.id.btnregistrar:
-                Intent i= new Intent(this, RegistrarAeropuerto.class);
+                 i= new Intent(this, RegistrarAeropuerto.class);
                 startActivity(i);
-                break;
+            break;
+            case R.id.btnmapa:
+                 i= new Intent(this,MapsActivity.class);
+                 startActivity(i);
+            break;
         }
-
     }
 }

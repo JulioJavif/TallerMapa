@@ -51,8 +51,12 @@ public class RegistrarAeropuerto extends AppCompatActivity implements View.OnCli
 
                     }else{
                         ac.agregarAeropuerto(a);
+                        codigo.setText("");nombre.setText("");pais.setText("");ciudad.setText("");direccion.setText("");
+                        latitud.setText("");longitud.setText("");
+
                     }
                 }
+            break;
         }
     }
 }
