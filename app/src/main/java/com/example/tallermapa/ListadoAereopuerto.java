@@ -2,6 +2,7 @@ package com.example.tallermapa;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -40,7 +41,9 @@ public class ListadoAereopuerto extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 String ID = IDs.get(position).toString();
-
+                Intent i = new Intent(getApplicationContext(), InfoAereopuerto.class);
+                i.putExtra("ID", ID);
+                startActivity(i);
             }
         });
     }

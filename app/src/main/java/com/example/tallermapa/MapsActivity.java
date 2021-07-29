@@ -38,7 +38,12 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_maps);
         ec = new AeropuertoController(this);
-        c = ec.allAeropuerto();
+        String ID = getIntent().getStringExtra("id");
+        if(ID == null){
+            c = ec.allAeropuerto();
+        }else {
+            c = ec.getAeropuertoByID(ID);
+        }
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
 
 
