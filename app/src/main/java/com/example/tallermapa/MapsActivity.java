@@ -39,6 +39,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         setContentView(R.layout.activity_maps);
         ec = new AeropuertoController(this);
         String ID = getIntent().getStringExtra("id");
+        c = ec.allAeropuerto();
         if(ID == null){
             c = ec.allAeropuerto();
         }else {
@@ -115,8 +116,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             @Override
             public boolean onMarkerClick(Marker marker) {
                 LatLng marcador = marker.getPosition();
-
-
                 if (!isInfoWindowShow){
                     Toast.makeText(getApplicationContext(), marker.getTitle() + "Ubicacion :"+
                             marcador.latitude + "," + marcador.longitude, Toast.LENGTH_LONG).show();
