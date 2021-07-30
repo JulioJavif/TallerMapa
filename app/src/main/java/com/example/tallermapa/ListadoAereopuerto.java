@@ -44,6 +44,7 @@ public class ListadoAereopuerto extends AppCompatActivity {
                 Intent i = new Intent(getApplicationContext(), InfoAereopuerto.class);
                 i.putExtra("ID", ID);
                 startActivity(i);
+                finish();
             }
         });
     }

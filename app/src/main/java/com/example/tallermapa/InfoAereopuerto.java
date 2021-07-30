@@ -52,22 +52,33 @@ public class InfoAereopuerto extends AppCompatActivity {
         btnguardar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String cod = edtcodigo.getText().toString();
-                String nombre = edtnombre.getText().toString();
-                String pais = edtpais.getText().toString();
-                String ciudad = edtciudad.getText().toString();
-                String direccion = edtdireccion.getText().toString();
-                String lat = edtlat.getText().toString();
-                String lon = edtlon.getText().toString();
 
-                Aeropuerto editAeropuerto = new Aeropuerto(cod, nombre, pais, ciudad, direccion, lat, lon);
-                if (ac.EditAeropuerto(editAeropuerto)){
-                    Toast.makeText(InfoAereopuerto.this, "Aeropuerto actualizado", Toast.LENGTH_LONG).show();
-                    Intent i = new Intent(getApplicationContext(), ListadoAereopuerto.class);
-                    startActivity(i);
-                    finish();
+                if (!edtcodigo.getText().toString().isEmpty()
+                && !edtnombre.getText().toString().isEmpty()
+                && !edtpais.getText().toString().isEmpty()
+                && !edtciudad.getText().toString().isEmpty()
+                && !edtdireccion.getText().toString().isEmpty()
+                && !edtlat.getText().toString().isEmpty()
+                && !edtlon.getText().toString().isEmpty()){
+                    String cod = edtcodigo.getText().toString();
+                    String nombre = edtnombre.getText().toString();
+                    String pais = edtpais.getText().toString();
+                    String ciudad = edtciudad.getText().toString();
+                    String direccion = edtdireccion.getText().toString();
+                    String lat = edtlat.getText().toString();
+                    String lon = edtlon.getText().toString();
+
+                    Aeropuerto editAeropuerto = new Aeropuerto(cod, nombre, pais, ciudad, direccion, lat, lon);
+                    if (ac.EditAeropuerto(editAeropuerto)){
+                        Toast.makeText(InfoAereopuerto.this, "Aeropuerto actualizado", Toast.LENGTH_LONG).show();
+                        Intent i = new Intent(getApplicationContext(), ListadoAereopuerto.class);
+                        startActivity(i);
+                        finish();
+                    }else {
+                        Toast.makeText(InfoAereopuerto.this, "No fue posible editar", Toast.LENGTH_LONG).show();
+                    }
                 }else {
-                    Toast.makeText(InfoAereopuerto.this, "No fue posible editar", Toast.LENGTH_LONG).show();
+                    Toast.makeText(InfoAereopuerto.this, "Los campos deben estar llenos", Toast.LENGTH_LONG).show();
                 }
             }
         });

@@ -9,24 +9,35 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="183dp"
-        android:orientation="vertical"></LinearLayout>
+        android:layout_height="270dp"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="320dp"
+            app:srcCompat="@drawable/avion" />
+    </LinearLayout>
 
     <Button
         android:id="@+id/btnregistrar"
         android:layout_width="match_parent"
         android:layout_height="72dp"
+        android:layout_marginTop="50dp"
+        android:backgroundTint="#095B9C"
         android:text="REGISTRAR AEROPUERTO" />
 
     <Button
         android:id="@+id/btnlistado"
         android:layout_width="match_parent"
         android:layout_height="80dp"
+        android:backgroundTint="#095B9C"
         android:text="LISTADO AEROPUERTO" />
 
     <Button
         android:id="@+id/btnmapa"
         android:layout_width="match_parent"
         android:layout_height="88dp"
+        android:backgroundTint="#095B9C"
         android:text="VER MAPA" />
 </LinearLayout>
